@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Expense Teacker'),
       ),
-      body: Text("Project Started"),
+      body: Center(child: Text("Project Started")),
     );
   }
 }
