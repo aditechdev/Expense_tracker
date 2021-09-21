@@ -4,21 +4,9 @@ import '../models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionList extends StatelessWidget {
-  List<Transaction> transactions;
+  final List<Transaction> transactions;
 
   TransactionList({@required this.transactions});
-  // @override
-  // Widget build(BuildContext context) {
-  //   // TODO: implement build
-  //   throw UnimplementedError();
-  // }
-  // const TransactionList({Key key}) : super(key: key);
-
-  // @override
-  // _TransactionListState createState() => _TransactionListState();
-// }
-
-// class _TransactionListState extends State<TransactionList> {
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +24,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple,
+                      color: Theme.of(context).primaryColor,
                       width: 2,
                     ),
                   ),
@@ -48,7 +36,7 @@ class TransactionList extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: Colors.purple,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     ),
