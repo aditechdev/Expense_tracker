@@ -1,3 +1,5 @@
+import 'package:flutter/painting.dart';
+
 import './widgets/new_transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -19,6 +21,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.amber,
+        fontFamily: 'Quicksand',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+        ),
       ),
       home: MyHomePage(),
     );
@@ -32,18 +52,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    Transaction(
-      id: 'ti',
-      title: 'New Shoes',
-      amount: 99.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'New Frock',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: 'ti',
+    //   title: 'New Shoes',
+    //   amount: 99.99,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: 't2',
+    //   title: 'New Frock',
+    //   amount: 69.99,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   void addNewTransaction(String txTitle, double txAmount) {
@@ -80,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
+        // textTheme: Theme.of(context).appBarTheme.,
         actions: <Widget>[
           IconButton(
             onPressed: () => _startAddNewTransaction(context),
